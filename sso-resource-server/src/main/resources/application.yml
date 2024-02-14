@@ -1,0 +1,15 @@
+server: 
+  port: 8092
+  servlet: 
+    context-path: /sso-resource-server
+
+####### resource server configuration properties
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8091/auth/realms/gilsonbraggion
+          jwk-set-uri: http://localhost:8091/auth/realms/gilsonbraggion/protocol/openid-connect/certs
+  jpa:
+    defer-datasource-initialization: true
